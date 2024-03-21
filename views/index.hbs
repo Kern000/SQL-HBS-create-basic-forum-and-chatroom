@@ -1,0 +1,22 @@
+{{#extends "base"}}
+{{#block "content"}}
+    <table class="mt-5">
+        <thead>
+            <th class="p-3 bg-primary border">Thread Id</th>
+            <th class="p-3 bg-success border">Threads</th>
+            <th class="p-3 bg-success border">Subtitle</th>
+            <th class="p-3 bg-success border">Submitted By:</th>
+        </thead>
+        <tbody>
+            {{#each threadsData}}
+                <tr>
+                    <td class="p-3 border d-flex justify-content-center"> {{threadId}} </td>
+                    <td class="p-3 border"> {{title}} </td>
+                    <td class="p-3 border"> {{subTitle}} </td>
+                    <td class="p-3 border"> {{userName}} </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+{{/block}}
+{{/extends}}
