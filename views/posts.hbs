@@ -1,0 +1,25 @@
+{{#extends "base"}}
+{{#block "content"}}
+
+    <h3> Thread: {{threadPosts.0.title}} </h3>
+    <p class="pb-0 mb-0"> {{threadPosts.0.subTitle}} </p>
+
+    <div class="container-fluid border" style="min-height:400px;">
+        {{threadPosts.0.threadInitialContent}}
+    </div>
+
+    {{#each threadPosts}}
+        <div class="card">
+            <div class="card-header" style="font-style:italic;">
+                Replied by: {{userName}}
+            </div>
+            <div class="card-body">
+                <p class="card-text"> {{postContent}} </p>
+            </div>
+        </div>
+    {{/each}}
+
+    <button class="btn btn-dark mt-3"> Add post </button>
+
+{{/block}}
+{{/extends}}

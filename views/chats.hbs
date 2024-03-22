@@ -1,0 +1,36 @@
+{{#extends "base"}}
+{{#block "content"}}
+    <div class="container-fluid p-3 mt-2" style="background-color: rgba(46,201,113,1)"> 
+        {{chatPosts.0.user_id1}} and {{chatPosts.0.user_id2}} are now chatting 
+    </div>
+    <div class="container-fluid d-flex" style="flex-direction: column; position: relative; background-color: lightgray; height:70vh;">
+        {{#each chatPosts}}           
+                <div class="m-5 mt-3" >
+                    <span class="border p-2" 
+                         {{#eq user_id user_id1}} 
+                            style=  " 
+                                        background-color:green; 
+                                        border-radius:25px;
+                                        position: absolute;
+                                        right: 25px;
+                                    "
+                         {{/eq}}
+
+                         {{#eq user_id user_id2}}
+                            style=  " 
+                                        background-color:white; 
+                                        border-radius:25px;
+                                        position: absolute;
+                                        right: 50px;
+                                    "
+                        {{/eq}}
+                         > {{content}} </span>
+                </div>
+        {{/each}}
+    </div>
+    <div class="container-fluid p-3 border" style="background-color: white">
+        <input type="text" class="form-control" />
+        <button class="btn btn-light border mt-2"> Send </button>
+    </div>
+{{/block}}
+{{/extends}}

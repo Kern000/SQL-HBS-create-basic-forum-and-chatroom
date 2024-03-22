@@ -21,19 +21,21 @@ VALUES
 ("Meow", 3, 3),
 ("Meow?", 2, 3);
 
-INSERT INTO Chats (content) VALUES 
-("Hello, how are you?"),
-("I am fine thank you."),
-("What is so fine about you?"),
-("I have the finest moo"),
-("A woooo");
+INSERT INTO Chats (content, user_id) VALUES 
+("Hello, how are you?", 1),
+("I am fine thank you.", 2),
+("What is so fine about you?", 1),
+("I have the finest moo", 2),
+("A woooo", 1);
 
-INSERT INTO Users_Chats_Room (user_id, chat_id) VALUES
-(1,1),
-(2,2),
-(1,3),
-(2,4),
-(3,5);
+INSERT INTO Users_Chats_Room (user_id1, user_id2, chat_id) VALUES
+(1, 2, 1),
+(1, 2, 2),
+(1, 2, 3),
+(1, 2, 4),
+(1, 2, 5);
+
+
 
 
 

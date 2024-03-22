@@ -28,15 +28,18 @@ CREATE TABLE Posts (
 
 CREATE TABLE Chats (
     chatId INT AUTO_INCREMENT PRIMARY KEY,
-    content VARCHAR(255)
+    content VARCHAR(255),
+    user_id INT
 );
 
 
 CREATE TABLE Users_Chats_Room (
     usersChatsId INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT,
+    user_id1 INT,
+    user_id2 INT,
     chat_id INT,
-    FOREIGN KEY (user_id) REFERENCES Users (userId),
+    FOREIGN KEY (user_id1) REFERENCES Users (userId),
+    FOREIGN KEY (user_id2) REFERENCES Users (userId),
     FOREIGN KEY (chat_id) REFERENCES Chats (chatid)
 );
 

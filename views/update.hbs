@@ -1,0 +1,26 @@
+{{#extends "base"}}
+{{#block "content"}}
+
+<h4> Update a thread </h4>
+<form method="POST">
+    <div class="mb-2">
+        <label>Thread Title</label>
+        <input type="text" class="form-control"  name="title" value="{{threadInfo.0.title}}" />
+    </div>
+    <div class="mb-3">
+        <label>Subtitle</label>
+        <input type="text" class="form-control" name="subTitle" value="{{threadInfo.0.subTitle}}"/>
+    </div>
+    <div class="mb-3 d-flex" style="flex-direction:column;">
+        <label>Thread body</label>
+        <input name="threadInitialContent" class="form-control" style="height:400px;" value="{{threadInfo.0.threadInitialContent}}"/>
+    </div>
+    <input type="text" style="display:none;" name="user_id" value="{{threadInfo.0.user_id}}" />
+    <input type="text" style="display:none;" name="threadId" value="{{threadInfo.0.threadId}}" />
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Update thread</button>
+    </div>
+</form>
+
+{{/block}}
+{{/extends}}
