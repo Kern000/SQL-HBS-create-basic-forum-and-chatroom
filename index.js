@@ -124,6 +124,23 @@ async function main(){
             res.status(500)
         }
     })
+
+    app.delete("/deleteThread/:threadId", async(req,res)=>{
+        console.log("route hit");
+
+        let threadId = req.params.threadId;
+        console.log("threadId", threadId);
+
+        try {
+            console.log("try catch hit")
+            await connection.execute(`DELETE FROM Threads WHERE threadId=${threadId}`);
+            console.log("deleted");
+            res.status(201);
+        } catch (error) {
+            res.status(500);
+        }
+    })
+
 }
 
 
